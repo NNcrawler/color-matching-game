@@ -1,0 +1,48 @@
+//------------Initialize Game Dengan Kartu Tertutup-------
+FUNCTION newGame()
+  INITIALIZE 'color' sebagai list 6 warna secara berpasangan
+  FUNCTION acak urutan 'color'
+  INITIALIZE 'card' object dengan atribut 'id', 'color', dan 'isOpened'
+  INITIALIZE array 'cards'
+  FOR setiap nilai di color
+    APPEND object 'card' pada array 'cards'
+    ASSIGN 'id' dari 'card' object sesuai urutan for
+    ASSIGN 'color' dari 'card' object sebagai urutan for pada var 'color'
+    ASSIGN 'isOpened' dari 'card' object sebagai false
+
+//-------------Card Click Handler---------------
+INITIALIZE 'status' game sebagai "closed" yang berarti tidak ada kartu yang dibuka
+INITIALIZE 'opened'
+INITIALIZE 'score' sebagai 0
+INITIALIZE 'counter' sebagai 0 untuk penanda acak kartu ketika semua sudah terbuka
+FUNCTION clickCard('id') sebagai handler ketika card di click
+  IF masih dalam permainan dan semua kartu tertutup atau terbuka satu
+    IF semua kartu tertutup
+	  ASSIGN 'status' menjadi "open1" 
+	  ASSIGN 'id' kartu terbuka kedalam 'opened'
+    IF satu kartu terbuka
+      ASSIGN 'status' menjadi "open2"	
+	  IF warna dari 'cards'['id'] kartu baru terbuka EQUAL warna dari 'card'['opened']
+	    ASSIGN 'card'['id'].isOpened dengan true
+		ASSIGN 'card'['opened'].isOpened dengan true
+		ASSIGN 'status' dengan "closed"
+		ASSIGN 'counter' dengan 'counter' +1
+		ASSIGN 'time' dengan 'time'+3
+		ASSIGN 'score' dengan 'score'+10
+		OUTPUT 'score'
+	  ELSE kalau warna beda
+	    balik kedua kartu
+		ASSIGN 'status' menjadi "closed"
+	
+	  IF semua kartu terbuka dan waktu masih ada
+	    panggil newGame()
+		ASSIGN 'counter' dengan 0 sebagai reset
+		
+		
+//------------TIMER-----------
+INITIALIZE 'time' dengan 20
+FUNCTION timer() 
+  ASSIGN 'time' dengan 'time'-1 setiap satu detik
+
+FUNCTION showTimer()
+  OUTPUT sisa waktu
