@@ -12,6 +12,7 @@
   width: 640px;
   position: relative;
   margin:auto;
+  overflow: hidden;
 }
 
 .game{
