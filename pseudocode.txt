@@ -32,6 +32,7 @@ FUNCTION clickCard('id') sebagai handler ketika card di click
 		OUTPUT 'score'
 	  ELSE kalau warna beda
 	    balik kedua kartu
+		delay next line untuk pinalti kesalahan
 		ASSIGN 'status' menjadi "closed"
 	
 	  IF semua kartu terbuka dan waktu masih ada

@@ -61,7 +61,7 @@ function clickCard(id){
 		  document.getElementById(temp).style.backgroundColor= 'black';
 		  document.getElementById('card-'+(opened+1)).style.backgroundColor= 'black';
 		  status='closed';
-		},1500);
+		},500);
 	  }
 	  
 	  if (counter%6==0 && counter!=0 && time>0){
