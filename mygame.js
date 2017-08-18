@@ -33,7 +33,7 @@ newGame();
 //----------------------Clicked card---------------
 var status='closed';
 var opened;
-var score= 1000;
+var score= 0;
 var counter=0;
 function clickCard(id){
   if(status != 'open2' && status != 'notPlaying' && time>0 && cards[id].isOpened==false){
@@ -53,22 +53,22 @@ function clickCard(id){
 		cards[id].isOpened=true;
 		status='closed';
 		counter+=1;
+		time+=3;
+		score+=10;
+		document.getElementById('score').innerHTML=score;
 	  }else{
 	    setTimeout(function(){
 		  document.getElementById(temp).style.backgroundColor= 'black';
 		  document.getElementById('card-'+(opened+1)).style.backgroundColor= 'black';
 		  status='closed';
-		},1000);
-		score-=10
+		},1500);
 	  }
 	  
 	  if (counter%6==0 && counter!=0 && time>0){
 	    newGame();
 		console.log('newGame');
 		counter=0;
-		//status='notPlaying';
 	  }
-
 	};
   }
 }
@@ -101,6 +101,8 @@ function showTimer(){
 }
 
 showTimer();
+timer();
+document.getElementById('score').innerHTML=score;
 
 document.getElementById('card-1').addEventListener('click', function(){clickCard(0)});
 document.getElementById('card-2').addEventListener('click', function(){clickCard(1)});

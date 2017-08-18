@@ -10,4 +10,11 @@
   border-style: solid;
   border-radius: 20px;
   width: 640px;
+  position: relative;
+  margin:auto;
 }
+
+.game{
+  text-align: center;
+}
+
