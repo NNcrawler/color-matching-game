@@ -29,7 +29,7 @@ function newGame(){
 	};
 
 };
-newGame();
+
 //----------------------Clicked card---------------
 var status='closed';
 var opened;
@@ -99,10 +99,11 @@ function showTimer(){
   }
   document.getElementById('timer').innerHTML=output;
 }
-
+//-------------------------------------------
 showTimer();
 timer();
 document.getElementById('score').innerHTML=score;
+newGame();
 
 document.getElementById('card-1').addEventListener('click', function(){clickCard(0)});
 document.getElementById('card-2').addEventListener('click', function(){clickCard(1)});
