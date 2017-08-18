@@ -36,7 +36,7 @@ var opened;
 var score= 0;
 var counter=0;
 function clickCard(id){
-  if(status != 'open2' && status != 'notPlaying' && time>0 && cards[id].isOpened==false){
+  if(status != 'open2' && status != 'notPlaying' && time>0 && cards[id].isOpened==false && id != opened){
     temp='card-'+(id+1);
 	document.getElementById(temp).style.backgroundColor= cards[id].color;
 	if(status=='closed'){
