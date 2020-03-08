@@ -1,0 +1,14 @@
+{
+  "name": "color-matching-game",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NNcrawler/color-matching-game",
+  "author": "rasyid hakim <rasyid.xyz@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
